@@ -1,0 +1,3 @@
+name: ancOutposts
+version: '${project.version}'
+main: com.ancienty.ancoutposts.Main
