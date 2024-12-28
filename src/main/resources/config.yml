@@ -1,0 +1,103 @@
+#
+# Outpost plugin, developer for OldStar_YT (506987723891146765)
+# Developed by: Ancienty
+#
+
+config:
+  version: 1.0
+  # Default claim time in seconds (default: 100 seconds)
+  claim_time: 100
+
+outposts:
+  guard:
+    name: "&3&lGuard Outpost"
+    lore:
+      - ""
+      - " &7This is an example outpost "
+      - " &7filler message, filler message "
+      - ""
+      - " &8• &7Owner: {owner} "
+      - " &8• &7Progress: {progress} "
+      - ""
+      - " &8• &7Rewards: {rewards} "
+      - ""
+    slot: 10
+    claim_time: 100  # Time in seconds to claim the outpost
+    rewards:
+      one-time:
+        1:
+          type: INCREASED_DAMAGE
+          percent: 5
+          display: "&8• &2Increased Damage &8- &f5%"
+        2:
+          type: REDUCED_DAMAGE
+          percent: 10
+          display: "&8• &cDecreased Damage &8- &f10%"
+        3:
+          type: COMMAND
+          command: "eco give {player} 500"
+          display: "&8• &eMoney &8- &f500$"
+      recurring:
+        1:
+          type: COMMAND
+          interval: 60 # in minutes.
+          command: "eco give {player} 5000"
+          display: "&8• &eMoney &8- &f5000$"
+
+hologram:
+  claimed:
+    - ""
+    - "{outpost_name}"
+    - ""
+    - "&8• &7Claimed by: &6{clan_name}"
+    - "&8• &7Rewards: &6{rewards}"
+    - ""
+  being_claimed:
+    - ""
+    - "{outpost_name}"
+    - ""
+    - "&8• &7Being claimed by: &6{progress_clan_name}"
+    - "&8• &7Progress: &6{progress}"
+    - "&8• &7Rewards: &6{rewards}"
+    - ""
+  unclaimed:
+    - ""
+    - "{outpost_name}"
+    - "&8• &7Being claimed by: &6None"
+    - "&8• &7Progress: &60%"
+    - "&8• &7Rewards: &6{rewards}"
+    - ""
+
+lang:
+  prefix: "&8[&6ancOutposts&8] &7"
+  only_players: "&cOnly players can use this command."
+  no_permission: "&cYou don't have permission to use this command."
+  usage: "&eUsage: {usage}"
+  need_select_corners: "&cYou need to select two corners first."
+  outpost_id_not_found: "&cOutpost ID not found in config.yml."
+  outpost_created: "&aOutpost {outpost_name} created with ID: {outpost_id}."
+  position_set: "&aPosition {pos} set."
+  clan_claimed_outpost: "&aClan {clan_name} has claimed {outpost_name}!"
+  clan_lost_outpost: "&cYour clan has lost control over {outpost_name}."
+  outpost_unclaimed: "&a{outpost_name} is now unclaimed!"
+  received_damage_increase: "&aYou received a {percent}% damage increase!"
+  received_damage_reduction: "&aYou received a {percent}% damage reduction!"
+  rewards_expired: "&cYour rewards from {outpost_name} have expired."
+  claim_progress: "&aClaim progress: {progress}%"
+  clan_members_detected: "&aClan members detected. Claim progress continuing."
+  players_different_clans: "&cPlayers from different clans detected. Claim progress reverting."
+  players_no_clan: "&cPlayers without a clan detected. Claim progress paused."
+  position_1_set: "&aPosition 1 set."
+  position_2_set: "&aPosition 2 set."
+  unclaimed_by_admin: "&aOutpost {outpost_name} has been unclaimed."
+  claim_time_set: "&aClaim time set to {claim_time} seconds."
+  reward_added: "&aAdded reward: {reward_type} {reward_percent}%."
+  reward_removed: "&cRemoved reward: {reward_type} {reward_percent}%."
+  no_rewards_to_remove: "&cNo rewards to remove."
+  unknown_command: "&cUnknown command. Usage: {usage}"
+  left_outpost: "&cYou left the outpost {outpost_name}."
+  hologram_moved: "&aHologram for {outpost_name} moved to your location."
+  entered_outpost: "&7You've entered the outpost: &a{outpost_name}"
+  config_reloaded: "&aConfiguration reloaded successfully."
+  you_already_own_outpost: "&7You already own the outpost {outpost_name}"
+
